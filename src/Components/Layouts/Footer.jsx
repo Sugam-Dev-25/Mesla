@@ -37,11 +37,11 @@ export default function Footer() {
 
 
             {/* Main Container */}
-            <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[54px] py-[50px] md:py-[68px]">
+            <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[70px] py-10 md:py-[75px]">
                 
                 {/* FOOTER CONTENT */}
-                <div className="mt-20 flex flex-col gap-10 lg:flex-row gap-14 xl:gap-[208px]">
-                    {/* LEFT */}
+                    <div className="grid flex-1 grid-cols-1 lg:grid-cols-4  gap-10 xl:gap-[139px] ">
+                        {/* LEFT */}
                     <div className="max-w-[280px]">
                         {/* Logo */}
                         <div className="mb-5">
@@ -83,9 +83,6 @@ export default function Footer() {
                             </div>
                         </div>
                     </div>
-
-                    {/* RIGHT COLUMNS */}
-                    <div className="grid flex-1 grid-cols-1 gap-10 xl:gap-14 2xl:gap-[208px]  lg:grid-cols-3">
                         {/* Services */}
                         <div>
                             <h3 className="mb-[33px] text-lg font-semibold">
@@ -157,15 +154,8 @@ export default function Footer() {
                                 </div>
                             </div>
                         </div>
-                    </div>
-                </div>
-
-                
-
-                
-            </div>
-
-            
+                    </div>                     
+            </div>            
         </footer>
     );
 }
