@@ -19,7 +19,7 @@ const Header = () => {
                     </div>
 
                     {/* Search Section */}
-                    <div className="hidden lg:w-full sm:w-[50%] flex-1">
+                    <div className="hidden w-full  lg:flex-1">
                         <div className="flex h-[48px] overflow-hidden rounded-full bg-white">
 
                             {/* Category */}
