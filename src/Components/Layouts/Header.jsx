@@ -7,7 +7,7 @@ const Header = () => {
 
         <header className="bg-[#232F3F]">
             <div className="max-w-[1440px] mx-auto relative px-4 md:px-8 lg:px-12 xl:px-[70px] py-6">
-                <div className="flex flex-col lg:flex-row items-center gap-6 lg:gap-[42px]">
+                <div className="flex  items-center gap-2 lg:gap-[42px]">
 
                     {/* Logo */}
                     <div className="shrink-0">
@@ -19,12 +19,12 @@ const Header = () => {
                     </div>
 
                     {/* Search Section */}
-                    <div className="w-full flex-1">
+                    <div className="hidden lg:w-full sm:w-[50%] flex-1">
                         <div className="flex h-[48px] overflow-hidden rounded-full bg-white">
 
                             {/* Category */}
-                            <div className="flex items-center gap-2 border-r border-[#E5E5E5] pl-[36px] pr-4 my-2">
-                                <span className="text-[12px] text-[#A6A6A6] whitespace-nowrap">
+                            <div className="flex items-center gap-2 border-r border-[#E5E5E5] px-2 lg:pl-[36px] lg:pr-4 my-2">
+                                <span className="text-xs lg:text-sm text-[#A6A6A6] whitespace-nowrap">
                                     All Categories
                                 </span>
                                 <CaretDownIcon size={14} className="text-[#777]" />
@@ -34,11 +34,11 @@ const Header = () => {
                             <input
                                 type="text"
                                 placeholder="Search by products name of SKU......"
-                                className="flex-1 px-6 text-base outline-none placeholder:text-gray-400"
+                                className="flex-1 px-2 lg:px-6 text-xs lg:text-sm outline-none placeholder:text-gray-400"
                             />
 
                             {/* Search Button */}
-                            <button className="bg-[#115492] px-[28px] py-[14px] text-white">
+                            <button className="bg-[#115492] py-2 px-7 lg:py-[14px] text-white">
                                 <MagnifyingGlassIcon size={20} />
                             </button>
                         </div>

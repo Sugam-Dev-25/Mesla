@@ -6,3 +6,23 @@ body {
 .font-heading{
   font-family: "Cormorant Garamond", serif;
 }
+
+@keyframes categorySlider {
+  from {
+    transform: translateX(0);
+  }
+
+  to {
+    transform: translateX(calc(-50%));
+  }
+}
+
+.gradient-border {
+  background: linear-gradient(
+    180deg,
+    #FFFFFF 38.69%,
+    #262626 74.45%
+  );
+  padding: 2.29px;
+  border-radius: 50%;
+}
