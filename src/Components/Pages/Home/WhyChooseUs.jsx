@@ -44,25 +44,25 @@ return(
 
   <div className="relative">
 
-    {/* Top Arrow 1 */}
+   
     <img
       src={arrow2}
       alt=""
-      className=" absolute left-[9%] -bottom-[60px] hidden xl:block z-10"
+      className=" absolute left-[10%] -bottom-[70px] hidden xl:block z-10"
     />
 
-    {/* Bottom Arrow */}
+    
     <img
       src={arrow}
       alt=""
-      className=" absolute left-[35%] -top-[20px] hidden xl:block z-10"
+      className=" absolute left-[35%] -top-[10px] hidden xl:block z-10"
     />
 
-    {/* Top Arrow 2 */}
+    
     <img
       src={arrow2}
       alt=""
-      className=" absolute right-[25%] -bottom-[60px] hidden xl:block z-10"
+      className=" absolute right-[25%] -bottom-[70px] hidden xl:block z-10"
     />
 
     <div className="mt-16 grid grid-cols-1 sm:grid-cols-2 xl:grid-cols-4 gap-5">
@@ -75,7 +75,7 @@ return(
             shadow-[0px_4px_20px_rgba(0,0,0,0.08)]
             pt-[40px] px-[16px] pb-[20px]
            
-            ${index % 2 === 1 ? "xl:mt-[50px]" : ""}
+            ${index % 2 === 1 ? "xl:translate-y-[110px]" : ""}
           `}
         >
           {/* Icon */}
