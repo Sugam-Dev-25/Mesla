@@ -152,7 +152,7 @@ const totalCartItems = cart.reduce(
     setSearchTerm(e.target.value);
     onSearch(e.target.value);
   }}
-              placeholder="Search products..."
+              placeholder="Search by products name of SKU..."
               className="flex-1 px-4 text-sm outline-none"
             />
 
