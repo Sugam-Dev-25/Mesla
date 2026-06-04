@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useCart } from "../../../context/CartContext";
 import {
   CaretLeftIcon,
   CaretRightIcon,
@@ -6,12 +7,29 @@ import {
   ShoppingCartIcon,
 } from "@phosphor-icons/react";
 
-const ProductSlider = () => {
+
+  const ProductSlider = ({ searchTerm = "" }) => {
   const [products, setProducts] = useState([]);
-  const duplicatedProducts = [...products, ...products];
+ 
+
+  const filteredProducts = products.filter((product) =>
+    product.name
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase())
+  );
+
+  const duplicatedProducts =
+  filteredProducts.length > 1
+    ? [...filteredProducts, ...filteredProducts]
+    : filteredProducts;
+
   const [slide, setSlide] = useState(0);
 const [transition, setTransition] = useState(true);
-
+const { addToCart } = useCart();
+  
+useEffect(() => {
+  setSlide(0);
+}, [searchTerm]);
   useEffect(() => {
     const fetchProducts = async () => {
       try {
@@ -33,19 +51,19 @@ const [transition, setTransition] = useState(true);
 
   // Auto Slide
   useEffect(() => {
-  if (!products.length) return;
+  if (!filteredProducts.length) return;
 
   const timer = setInterval(() => {
     setSlide((prev) => prev + 1);
   }, 3000);
 
   return () => clearInterval(timer);
-}, [products]);
+}, [filteredProducts.length]);
 
 useEffect(() => {
-  if (!products.length) return;
+ if (!filteredProducts.length) return;
 
-  if (slide >= products.length) {
+  if (slide >= filteredProducts.length) {
     setTimeout(() => {
       setTransition(false);
       setSlide(0);
@@ -55,7 +73,7 @@ useEffect(() => {
       }, 50);
     }, 700);
   }
-}, [slide, products.length]);
+}, [slide, filteredProducts.length]);
 
  const nextSlide = () => {
   setSlide((prev) => prev + 1);
@@ -63,10 +81,24 @@ useEffect(() => {
 
 const prevSlide = () => {
   setSlide((prev) =>
-    prev === 0 ? products.length - 1 : prev - 1
+    prev === 0 ? filteredProducts.length - 1 : prev - 1
   );
 };
+if (!filteredProducts.length) {
+  return (
+    <section className="py-20">
+      <div className="max-w-[1440px] mx-auto text-center">
+        <h2 className="text-2xl font-semibold">
+          No Products Found
+        </h2>
 
+        <p className="mt-2 text-gray-500">
+          Search for another product.
+        </p>
+      </div>
+    </section>
+  );
+}
   return (
     <section className="bg-[#F3F4F6] py-10 xl:py-[70px]">
       <div className="max-w-[1440px] mx-auto px-4 md:px-8 lg:px-12 xl:px-[70px]">
@@ -158,7 +190,7 @@ const prevSlide = () => {
                 {/* Hover Buttons */}
                 <div className="mt-5 flex items-center gap-3 opacity-0 translate-y-3 transition-all duration-300 group-hover:translate-y-0 group-hover:opacity-100">
                   
-                  <button className="cursor-pointer flex h-10 w-10 items-center justify-center rounded border border-[#115492] text-[#115492]">
+                  <button   onClick={() => addToCart(product)} className="cursor-pointer flex h-10 w-10 items-center justify-center rounded border border-[#115492] text-[#115492]">
                     <ShoppingCartIcon size={18} />
                   </button>
 

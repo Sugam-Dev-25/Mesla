@@ -9,12 +9,13 @@ import Contact from './Contact';
 import Testimonials from './Testimonials';
 import Features from './Features';
 import WhyChooseUs from './WhyChooseUs';
-const HomeComponents = () => {
+const HomeComponents = ({ searchTerm }) => {
+
   return (
     <div>
       <HomeBanner/>
       <CategorySlider/>
-      <ProductSlider/>
+     <ProductSlider searchTerm={searchTerm} />
       <BestSeller/>
       <NewArrival/>
       <WhyChooseUs/>    
