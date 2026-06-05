@@ -8,7 +8,7 @@ import {
 } from "@phosphor-icons/react";
 
 
-  const ProductSlider = ({ searchTerm = "" }) => {
+  const NewArrival = ({ searchTerm = "" }) => {
   const [products, setProducts] = useState([]);
  
 
@@ -205,4 +205,4 @@ if (!filteredProducts.length) {
   );
 };
 
-export default ProductSlider;
+export default NewArrival;
